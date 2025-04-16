@@ -1,0 +1,133 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fceabb, #f8b500);
+    color: #333;
+}
+
+/* Headings */
+h1, h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+}
+
+/* Form styles */
+form {
+    width: 350px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff7043;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 10px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* List styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+li:hover {
+    background-color: #ffe0b2;
+    transition: background-color 0.3s ease;
+}
+
+li form {
+    display: inline;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    background-color: #ff8a65;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Custom link buttons */
+a.button-link {
+    background-color: #42a5f5;
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.2em;
+}
+
+a.button-link:hover {
+    background-color: #1e88e5;
+}

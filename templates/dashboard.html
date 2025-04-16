@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Available Courses</h2>
+        <a href="/my_courses">View My Courses</a><br><br>
+        <ul>
+            {% for course in courses %}
+                <li>
+                    {{ course[1] }}
+                    <form action="/register_course/{{ course[0] }}" method="post" style="display:inline;">
+                        <button type="submit">Register</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/logout">Logout</a><br><br>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
