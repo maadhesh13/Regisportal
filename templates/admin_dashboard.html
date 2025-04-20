@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Registered Users</h2>
+        <form method="post">
+            <label>Filter by Gender:</label>
+            <select name="gender">
+                <option value="All" {% if not selected_gender or selected_gender == "All" %}selected{% endif %}>All</option>
+                <option value="Male" {% if selected_gender == "Male" %}selected{% endif %}>Male</option>
+                <option value="Female" {% if selected_gender == "Female" %}selected{% endif %}>Female</option>
+                <option value="Other" {% if selected_gender == "Other" %}selected{% endif %}>Other</option>
+            </select>
+
+            <label>Filter by Age:</label>
+            <select name="age">
+                <option value="All" {% if not selected_age or selected_age == "All" %}selected{% endif %}>All</option>
+                <option value="18-25" {% if selected_age == "18-25" %}selected{% endif %}>18-25</option>
+                <option value="25-30" {% if selected_age == "25-30" %}selected{% endif %}>25-30</option>
+                <option value="30+" {% if selected_age == "30+" %}selected{% endif %}>30+</option>
+            </select>
+
+            <label>Filter by Course:</label>
+            <select name="course">
+                <option value="All" {% if not selected_course or selected_course == "All" %}selected{% endif %}>All</option>
+                <option value="Python Basics Only" {% if selected_course == "Python Basics Only" %}selected{% endif %}>Python Basics Only</option>
+                <option value="Web Development Only" {% if selected_course == "Web Development Only" %}selected{% endif %}>Web Development Only</option>
+                <option value="Data Science Only" {% if selected_course == "Data Science Only" %}selected{% endif %}>Data Science Only</option>
+                <option value="Python Basics & Web Development" {% if selected_course == "Python Basics & Web Development" %}selected{% endif %}>Python Basics & Web Development</option>
+                <option value="Python Basics & Data Science" {% if selected_course == "Python Basics & Data Science" %}selected{% endif %}>Python Basics & Data Science</option>
+                <option value="Web Development & Data Science" {% if selected_course == "Web Development & Data Science" %}selected{% endif %}>Web Development & Data Science</option>
+            </select>
+
+            <button type="submit">Filter</button>
+        </form>
+        <ul>
+            {% for user in users %}
+                <li>
+                    {{ user[1] }} (Gender: {{ user[3] }}, Age: {{ user[4] }}, Courses: 
+                    {% if user_courses[user[0]] %}
+                        {{ user_courses[user[0]]|join(', ') }}
+                    {% else %}
+                        None
+                    {% endif %})
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/logout">Logout</a><br><br>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
